@@ -8,11 +8,6 @@ export const apiRoot = APIROOT;
 
 export const postsPrefix = "/post";
 
-export const remark = {
-	baseurl: "https://remark42.radio-t.com",
-	site_id: "rtnews",
-};
-
 /**
  * now in ms
  */
@@ -54,7 +49,8 @@ export const showStartTimeDeadline = MINUTE * 15;
 /**
  * Matches if article origlink matches to listeners proposed topics url
  */
-export const prepTopicsReg = /^https?:\/\/radio-t.com\/p\/\d{4}\/\d{2}\/\d{2}\/prep-\d+\/?$/i;
+export const prepTopicsReg =
+	/^https?:\/\/radio-t.com\/p\/\d{4}\/\d{2}\/\d{2}\/prep-\d+\/?$/i;
 
 /**
  * needs for situation when dragging something
@@ -80,13 +76,6 @@ export const sortings: Sorting[] = [
 		fn(a, b) {
 			if (a.ats === b.ats) return 0;
 			return a.parsedats > b.parsedats ? -1 : 1;
-		},
-	},
-	{
-		title: "По комментариям",
-		fn(a, b) {
-			if (a.comments === b.comments) return 0;
-			return a.comments > b.comments ? -1 : 1;
 		},
 	},
 ];
